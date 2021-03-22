@@ -6,8 +6,10 @@ A Bot to automatically record Chaturbate live streams (using streamlink).
 
 <a href="https://github.com/oliverjrose99/Recordurbate/issues/39">Why use streamlink?</a>
 ### Original
-https://github.com/oliverjrose99/Recordurbate /n
+https://github.com/oliverjrose99/Recordurbate
+
 https://github.com/botnet88/Recordurbate-streamlink
+
 ## Requirements
 * Linux
 * Python 3+ (requests)
