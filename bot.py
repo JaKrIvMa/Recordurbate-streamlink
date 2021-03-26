@@ -73,7 +73,7 @@ class Bot:
         data = {"room_slug": username, "bandwidth": "high"}
 
         try:
-            time.sleep(0.45) #added sleep to pass cloudflare
+            time.sleep(3) #added sleep to pass cloudflare
             r = requests.post(url, headers=headers, data=data)
             if r.json()["room_status"] == "public":
                 return True
@@ -109,7 +109,6 @@ class Bot:
                         del self.processes[idx]
 
                 # check to start recording
-                time.sleep(0.45) #added sleep to pass cloudflare
                 for idx, streamer in enumerate(self.config["streamers"]):
 
                     # if already recording
@@ -117,7 +116,6 @@ class Bot:
                         continue
 
                     # check if online
-                    time.sleep(0.45) #added sleep to pass cloudflare
                     if self.is_online(streamer[0]):
                         self.logger.info("Started to record {}".format(streamer[0]))
 
@@ -134,7 +132,6 @@ class Bot:
                         self.processes.append([streamer[0], subprocess.Popen(args, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)])
 
                         # set to recording
-                        time.sleep(0.45) #added sleep to pass cloudflare
                         self.config["streamers"][idx][1] = True
 
                     # check rate limit
