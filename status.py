@@ -13,6 +13,7 @@ d = Daemon()
 streamer_list = []
 
 def print_status(streamer):
+    time.sleep(2.500)
     if b.is_online(streamer):
         print("== " + streamer + " is online ==")
     else:
@@ -27,6 +28,7 @@ def print_recording():
             recording_list.append(output)
             
     for streamer in recording_list:
+        time.sleep(2.500)
         streamer = re.sub('https://chaturbate.com/', '', streamer)
         streamer = streamer[:-1] # remove last character from string
         print(streamer + " is being recorded")
